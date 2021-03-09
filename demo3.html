@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+html, body {
+  height: 100%;
+}
+body {
+  text-align: center;
+  background-color: #4d5eb3;
+}
+body:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0;
+  height: 100%;
+}
+h1 {
+  display: inline-block;
+  color: white;
+  font-family: "Righteous", serif;
+  font-size: 12em;
+  text-shadow: 0.03em 0.03em 0 #4d5eb3;
+}
+h1:after {
+  content: attr(data-shadow);
+  position: absolute;
+  top: 0.06em;
+  left: 0.06em;
+  z-index: -1;
+  text-shadow: none;
+  background-image: linear-gradient(45deg, transparent 45%, #ebe9e0 45%, #ebe9e0 55%, transparent 0);
+  background-size: 0.05em 0.05em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shad-anim 15s linear infinite;
+}
+p {
+    width:950px;
+    margin:0 auto;
+    background:linear-gradient(45deg, transparent 45%, #ebe9e0 45%, #ebe9e0 55%, transparent 0);
+    background-size: 0.05em 0.05em;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font:bold 95px/1.231 georgia,sans-serif;
+    text-transform:uppercase;
+}
+@keyframes shad-anim {
+  0% {
+    background-position: 0 0;
+  }
+  0% {
+    background-position: 100% -100%;
+  }
+}
+</style>
+<body>
+    <h1 data-shadow='slogan!'>slogan!</h1>
+    <p>attr</p>
+</body>
+</html>
